@@ -4,7 +4,7 @@ Utilizaremos o Tkinter para a GUI.
 
 Vamos começar criando uma janela vazia no tkinter.
  
-```
+```ruby
 from tkinter import *
 import tkinter
 
@@ -33,13 +33,13 @@ janela.mainloop()
 No código acima, criamos uma janela vazia no Tkinter, e definimos algumas cores que usaremos para nossa aplicação, a variável cor, será a cor da fonte, e a variável fundo será a cor de fundo.
 E então importaremos o datetime, o que nos permitirá trabalhar com o horário e calendário.
 
-```
+```ruby
 from datetime import datetime
 ```
 
 Depois disso, obteremos a hora, o dia da semana, o mês e o ano.
 
-```
+```ruby
 tempo = datetime.now()
 
     hora = tempo.strftime("%H:%M:%S")
@@ -52,7 +52,7 @@ tempo = datetime.now()
 
 Vamos criar uma função e passar todos esses valores para essa função.
 
-```
+```ruby
 def relogio():
     tempo = datetime.now()
 
@@ -65,14 +65,14 @@ def relogio():
 
 Depois disso vamos criar um label que mostrará a hora.
 
-```
+```ruby
 l1 = Label(janela, text="", font=("digital-7 100"), bg=fundo, fg=cor)
 l1.grid(row=0, column=0, sticky=NW, padx=5)
 ```
 
 Agora vamos passar o valor da hora para o label que acabamos de criar, e executar a função.
 
-```
+```ruby
 def relogio():
     tempo = datetime.now()
 
@@ -87,7 +87,7 @@ def relogio():
 
 Para manter o tempo dinâmico, usaremos o seguinte l1.after(200, relogio) execute a função relogio():
 
-```
+```ruby
 def relogio():
     tempo = datetime.now()
 
@@ -110,7 +110,7 @@ relogio()
 
 Agora que o relógio já está funcionando, passaremos também os valores restantes, criando um novo label.
 
-```
+```ruby
 l2 = Label(janela, text="", font=("digital-7 18"), bg=fundo, fg=cor)
 l2.grid(row=1, column=0, sticky=NW, padx=5)
 ````
@@ -121,7 +121,7 @@ E dentro da função de relógio iremos configurar da seguinte forma:
 As funcionalidades do relógio já estão prontas, agora vamos estilizar nosso relógio para que pareça mais digital.
 Primeiro vamos baixar a fonte aqui neste site. 
 
-```
+```ruby
 l2.config(text=dia_semana + ", " + str(dia) + "/" + str(mes) + "/" + str(ano))
 ```
 
@@ -131,7 +131,7 @@ Depois de baixar e extrair as fontes, e coloca no mesmo diretório em que está 
 **pip install pyglet**
 Após a instalação, escreva o seguinte código para adicionar a fonte que acabamos de baixar.
 
-```
+```ruby
 import pyglet("digital-7.ttf")
 ```
 
